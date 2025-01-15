@@ -1,7 +1,17 @@
 'use strict';
 
-const allCashbox = [4500, 3210, 650, 1250, 7830, 990, 13900, 370];
+const arrNumbers = (amount, n, m) => {
+    const numbers = [];
 
-const getAverageValue = allCashbox.reduce((sum, current) => sum + current, 0) / allCashbox.length;
+    while (amount > numbers.length) {
+        const rnd = Math.round(Math.random() * (m - n + 1) + n);
 
-console.log('Средний чек - ', getAverageValue);
+        if (rnd >= n && rnd <= m) {
+            numbers.push(rnd);
+        }        
+    }
+
+    return numbers;
+}
+
+console.log(arrNumbers(5, -20, 20));

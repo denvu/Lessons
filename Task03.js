@@ -1,10 +1,22 @@
-'use strict';
+"use strict";
 
-const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+const arrNumbers = (amount, n, m, parity) => {
+  const numbers = [];
 
-const addPrefix = (arr, prefix) => {
-    let result = arr.map(name => prefix + " " + name);
-    console.log(result);
+  while (amount > numbers.length) {
+    const rnd = Math.round(Math.random() * (m - n + 1) + n);
+
+    if (rnd >= n && rnd <= m) {
+      if (parity === "even" && rnd % 2 === 0) {
+        numbers.push(rnd);
+      } else if (parity === "odd" && rnd % 2 !== 0) {
+        numbers.push(rnd);
+      } else if (parity === undefined) {
+        numbers.push(rnd);
+      }
+    }
+  }
+  return numbers;
 };
 
-addPrefix(names, 'Mr');
+console.log(arrNumbers(5, -20, 20, 'even'));

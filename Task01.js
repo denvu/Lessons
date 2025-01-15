@@ -1,7 +1,14 @@
 'use strict';
 
-const allStudents = ['Иванов', 'Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
-const failedStudents = ['Сидоров', 'Смирнов', 'Попов'];
+const arrNumbers = (amount) => {
+    const numbers = [];
 
-const filter = allStudents.filter(item => !failedStudents.includes(item));
-console.log(filter);
+    while (amount > numbers.length) {
+        const rnd = Math.round(Math.random() * 100);
+        numbers.push(rnd);
+    }
+
+    return numbers;
+}
+
+console.log(arrNumbers(5));
