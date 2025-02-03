@@ -1,17 +1,18 @@
 'use strict';
 
-const arrNumbers = (amount, n, m) => {
-    const numbers = [];
+const numbers = [];
 
-    while (amount > numbers.length) {
-        const rnd = Math.round(Math.random() * (m - n + 1) + n);
+const calculate = (arr) => {
+  const sum = arr.reduce((sum, num) => sum + num, 0);
 
-        if (rnd >= n && rnd <= m) {
-            numbers.push(rnd);
-        }        
-    }
+  if (sum < 50) {
+    const rnd = Math.round(Math.random() * 10);
+    arr.push(rnd);
+    calculate(arr);
+  } else {
+    console.log(sum);
+    console.log(arr);
+  }
+};
 
-    return numbers;
-}
-
-console.log(arrNumbers(5, -20, 20));
+calculate(numbers);
