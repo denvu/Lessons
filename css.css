@@ -1,0 +1,10 @@
+body {
+    background-color:moccasin;
+    color:saddlebrown;
+    text-align: center;
+}
+
+.ul {
+    list-style-type: none;
+    font-size: 30px;
+}
